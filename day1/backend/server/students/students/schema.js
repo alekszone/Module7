@@ -31,7 +31,7 @@ const StudentSchema = new Schema(
     }
  },
     dateOfBirth: {type: Date,
-    required:true},
+    },
     country: {type:String,
     required:true  
     },

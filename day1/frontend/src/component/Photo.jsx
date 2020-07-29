@@ -7,11 +7,13 @@ const student = await fetch("http://localhost:3039/students/" + _id,{
 method : "DELETE"
  })
 if (student.ok){
-
 alert("Deleted")
 
 }
+
  }
+
+
 
 
 

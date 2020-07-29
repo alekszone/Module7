@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import {Row, Col, Table, Container} from 'react-bootstrap'
+import {Row, Col, Table, Container,Button} from 'react-bootstrap'
 import Photo from './Photo'
+import {Link} from 'react-router-dom'
 export default class home extends Component {
 state={
 students:[]
@@ -16,15 +17,13 @@ students : resp.student
 })
 }
 
-//  delete = async (id) =>{
-// const 
-// }
+
 
 
 
 
 render() {
-    console.log(this.state.students)
+    console.log(this.state.students._id)
         return ( 
             <Container>
             
@@ -46,6 +45,10 @@ render() {
             
  </tbody>
             </Table>
+
+
+<Button variant ="success" className ="mt-5"><Link className="navLink" to={"/addStudents/"}>Add student</Link></Button>
+
      </div>
      </Container>
         )  
