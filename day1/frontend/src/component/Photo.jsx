@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
 import { Table, Button } from 'react-bootstrap';
 export default class Photo extends Component {
+
+ delete = async (_id) => {
+const student = await fetch("http://localhost:3039/students/" + _id,{
+method : "DELETE"
+ })
+if (student.ok){
+
+alert("Deleted")
+
+}
+ }
+
+
+
    
   
     render() {
@@ -19,7 +33,7 @@ export default class Photo extends Component {
    <td>{email}</td>
    <td>{dateOfBirth}</td>
    <td>{country}</td>
-   <td><Button type="danger">Delete</Button></td>
+   <td><Button variant="danger" onClick={()=>this.delete(_id)}>Delete</Button></td>
     </tr>
  
  
