@@ -17,18 +17,18 @@ const StudentSchema = new Schema(
       type:String,
       required:true,
       lowercase:true,
-      validate: {
-        validator: async (value) => {
-          if(!valid.isEmail(value)){
-            throw new Error ("Email is ivalid")
-          }else{
-          const email = await studentModal.findOne({ email: value })
-          if (email) {
-            throw new Error("Email exist exist already in database")
-          }
-        }
-      }
-    }
+    //   validate: {
+    //     validator: async (value) => {
+    //       if(!valid.isEmail(value)){
+    //         throw new Error ("Email is ivalid")
+    //       }else{
+    //       const email = await studentModal.findOne({ email: value })
+    //       if (email) {
+    //         throw new Error("Email exist exist already in database")
+    //       }
+    //     }
+    //   }
+    // }
  },
     dateOfBirth: {type: Date,
     },
@@ -38,14 +38,14 @@ const StudentSchema = new Schema(
 phoneNumber:{
   type:Number,
   required:true,
-  validate: {
-    validator: async (value) => {
-      const phoneNumber = await studentModal.findOne({ phoneNumber: value })
-      if (phoneNumber) {
-        throw new Error("The number exist exist exist already in database")
-      }
-    }
-  }
+//   validate: {
+//     validator: async (value) => {
+//       const phoneNumber = await studentModal.findOne({ phoneNumber: value })
+//       if (phoneNumber) {
+//         throw new Error("The number exist exist exist already in database")
+//       }
+//     }
+//   }
 },
  projects: [{ type: Schema.Types.ObjectId, ref: "projects" }],
 

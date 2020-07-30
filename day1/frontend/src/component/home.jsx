@@ -17,8 +17,12 @@ students : resp.student
 })
 }
 
-
-
+componentDidUpdate( prevState) {
+    if (prevState.students !== this.state.students) {
+      console.log('pokemons state has changed.')
+    
+    }
+  }
 
 
 

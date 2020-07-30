@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {Form,Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 export default class addStudents extends Component {
     state={
 name:'',
 surname:'',
 email : '',
 country: '',
+dateOfBirth:'',
 phoneNumber: ''
     }
 addStudent = async()=>{
@@ -70,6 +72,16 @@ alert("Student Add")
     />
   </Form.Group>
   <Form.Group controlId="formBasicPassword">
+    <Form.Label>Date Of Birth</Form.Label>
+    <Form.Control
+     type="date" 
+     placeholder="Date of Birth"
+     onChange={(date)=>this.setState({dateOfBirth:date.currentTarget.value})}
+     value={this.state.dateOfBirth}
+     
+     />
+      </Form.Group>
+  <Form.Group controlId="formBasicPassword">
     <Form.Label>Phone Number</Form.Label>
     <Form.Control
      type="text" 
@@ -80,8 +92,8 @@ alert("Student Add")
      />
   </Form.Group>
 
-  <Button variant="primary"  onClick={this.addStudent}>
-    Submit
+  <Button variant="primary"  onClick={this.addStudent}><Link className="navLink" to="/home">Submit</Link>
+
   </Button>
 </Form>
                 
