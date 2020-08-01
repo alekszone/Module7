@@ -8,7 +8,7 @@ students:[]
 }
 
 
-componentDidMount=async () =>{
+addstudents=async () =>{
 const students = await fetch("http://localhost:3039/students/")
 const resp = await students.json()
 
@@ -16,13 +16,16 @@ this.setState({
 students : resp.student
 })
 }
+componentDidMount=()=>{
+    this.addstudents()
+}
 
-componentDidUpdate( prevState) {
-    if (prevState.students !== this.state.students) {
-      console.log('pokemons state has changed.')
+// componentDidUpdate( prevState) {
+//     if (prevState.students !== this.state.students) {
+//       console.log('pokemons state has changed.')
     
-    }
-  }
+//     }
+//   }
 
 
 

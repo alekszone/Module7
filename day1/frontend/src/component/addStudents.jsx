@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import {Form,Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+
+
+
 export default class addStudents extends Component {
     state={
 name:'',
@@ -25,12 +28,7 @@ if (student.ok){
 alert("Student Add")
 }
 }
-
-
-
-
-
-    render() {
+render() {
         console.log(this.state)
         return (
      <>
